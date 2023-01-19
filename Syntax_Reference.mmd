@@ -1,0 +1,131 @@
+\title{Mathpix Markdown Syntax Reference}
+
+# Incline math
+
+Inline math can be represented using $TeX$ or \( TeX \)  delimiters.
+
+Examples:
+
+Compute \(f(x) = x^2 + 2\) if \(x=2\).
+
+Newton postulated that $\vec { F } = m \vec { a }$.
+
+# Block mode math(non-numbered)
+Delimiters: $$...$$
+
+Example LaTeX:
+
+Rendered equation:
+$$
+x = \frac { - b \pm \sqrt { b ^ { 2 } - 4 a c } } { 2 a }
+$$
+
+Delimiters: \[...\]
+
+Rendered equation:
+\[
+y = \frac { \sum _ { i } w _ { i } y _ { i } } { \sum _ { i } w _ { i } } , i = 1,2 \ldots k
+\]
+
+Delimiters: \begin{equation*}...\end{equation*}
+
+Rendered equation:
+\begin{equation*}
+l ( \theta ) = \sum _ { i = 1 } ^ { m } \log p ( x , \theta )
+\end{equation*}
+
+Delimiters: \begin{align*}...\end{align*}
+
+Rendered equation:
+\begin{align*}
+t _ { 1 } + t _ { 2 } = \frac { ( 2 L / c ) \sqrt { 1 - u ^ { 2 } / c ^ { 2 } } } { 1 - u ^ { 2 } / c ^ { 2 } } = \frac { 2 L / c } { \sqrt { 1 - u ^ { 2 } / c ^ { 2 } } }
+\end{align*}
+
+# Block mode math (numbered)
+Delimiters: \begin{equation}...\end{equation}
+
+Rendered equation:
+\begin{equation}
+m = \frac { m _ { 0 } } { \sqrt { 1 - v ^ { 2 } / c ^ { 2 } } }
+\end{equation}
+
+# Align, split, gather equation environments
+Delimiters: \begin{align}...\end{align}
+
+Rendered equation:
+\begin{align}
+^{|\alpha|} \sqrt{x^{\alpha}} \leq(x \bullet \alpha) /|\alpha|
+\end{align}
+
+Delimiters: \begin{split}...\end{split}
+
+Reason to use: split your equation into smaller pieces
+
+Rendered equation:
+\begin{split}
+a& =b+c-d\\
+& \quad +e-f\\
+& =g+h\\
+& =i
+\end{split}
+
+- Use \\ to denote a new line and & to denote where the lines should align.
+- Need it numbered? Wrap it in \begin{equation}...\end{equation}
+
+Delimiters: \begin{gather}...\end{gather}
+Reason to use: for displaying a set of consecutive equations that don’t require special alignment
+
+Rendered equation:
+\begin{gather}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather}
+
+Delimiters: \begin{gather*}...\end{gather*}
+Reason to use: gather environment without an equation number
+
+Rendered equation:
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+
+# Equation references
+You can use \\label{}, \\ref{} and \\eqref{} to link to any numbered equation in your document:
+
+In equation \eqref{eq:1}, we find the value of an
+interesting integral:
+
+\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:1}
+\end{equation}
+
+\begin{equation}
+  \| x + y \| \geq | \| x | | - \| y \| |
+  \label{eq:2}
+\end{equation}
+
+Look at the Equation \ref{eq:2}
+
+In addition to using numbered block mode equation syntax for standard numbering (ie. 1, 2, 3), you can use also include \tag{} inside of your LaTeX delimiters to create a custom tag. Note that if \tag{} is used in a numbered equation, it will override the document’s numbering.
+
+$$
+\frac{x\left(x^{2 n}-x^{-2 n}\right)}{x^{2 n}+x^{-2 n}}
+\tag{1.1}
+$$
+
+\begin{equation}
+\max _{\theta} \mathbb{E}_{\mathbf{z} \sim \mathcal{Z}_{T}}\left[\sum_{t=1}^{T} \log p_{\theta}\left(x_{z_{t}} | \mathbf{x}_{\mathbf{z}_{<t}}\right)\right]
+\tag{1.2}
+\end{equation}
+
+# Chemical diagram formulas(SMILES)
+Chemical formulas can be represented using SMILES syntax.
+
+SMILES formulas can be rendered inline via <smiles>OC(=O)c1cc(Cl)cs1</smiles> or block mode via:
+```smiles
+OC(=O)c1cc(Cl)cs1
+```
+
+# Titles, Sections, Abstracts(LaTeX)
