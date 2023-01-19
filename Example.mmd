@@ -1,0 +1,54 @@
+\title{Example paper}
+
+\begin{abstract}
+This is an example paper that shows how the key Mathpix Markdown features work. Mathpix markdown is an interoperable, STEM-enhanced markdown document system for students, professors, and engineers.
+\end{abstract}
+
+# Introduction
+With Mathpix Markdown, I can use all the standard Markdown syntax, including **bold**, _italics_, `code`, -- strikethrough -- and  <mark>highlight</mark>.
+
+## Math
+
+I can use LateX to insert inline math like this:
+
+$\sigma_{x}\sigma_{p}\geq \frac{\hbar}{2}$
+
+And block math like this:
+$$
+\sigma_{x}\sigma_{p}\geq \frac{\hbar}{2}
+$$
+
+\pagebreak
+
+## Tables
+
+I can use the LaTex tabular environment to insert tables:
+
+\begin{tabular}{c|ccc}
+& sums & marginals & conditionals \\
+\hline why is it Gaussian? & no & yes & yes \\
+resulting density function & yes & yes & yes
+\end{tabular}
+
+Or I can use Markdown:
+
+| | sums | marginals | conditionals |
+| :--: | :--: | :--: | :--: |
+| why is it Guassian? | no | yes | yes |
+| resulting density fuction | yes | yes | yes |
+
+## Chemistry
+
+I can use SMILES to render chemical diagrams like this:
+
+<smiles>COc1cccc(C#N)c1</smiles>
+
+## Images
+![original image](https://cdn.mathpix.com/snip/images/6frAmPv_izRuX0zLcSkkruA4gedc1Yy138HxsXwsZks.original.fullsize.png)
+{width="250px",height="200px",align="left"}
+
+## Figures
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth, center]{https://cdn.mathpix.com/snip/images/MJT22mwBq-bwqrOYwhrUrVKxO3Xcu4vyHSabfbG8my8.original.fullsize.png}
+\end{figure}
